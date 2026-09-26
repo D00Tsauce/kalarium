@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalarium — Learn. Explore. Grow.</title>
+    <meta name="description" content="A place to learn, explore, and grow — without the pressure. Relatable mentors, guidance shaped around your interests and strengths.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kalarium-styles.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Grain Overlay -->
+    <div class="grain"></div>
+
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="ambient-blob blob-1"></div>
+        <div class="ambient-blob blob-2"></div>
+        <div class="ambient-blob blob-3"></div>
+    </div>
+
+    <!-- ===================== ANNOUNCEMENT BAR ===================== -->
+    <div class="announcement-bar" id="announcementBar">
+        <div class="announcement-inner">
+            <span class="announcement-badge">🎉 New</span>
+            <span class="announcement-text">Kalarium is now enrolling — 2-week free trial available</span>
+            <a href="#contact" class="announcement-link">Get Started →</a>
+        </div>
+        <button class="announcement-close" id="announcementClose" aria-label="Close">✕</button>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <!-- Left links -->
+            <div class="nav-group nav-left">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#why-us" class="nav-link">Why Us</a>
+            </div>
+
+            <!-- Center Logo -->
+            <a href="#" class="nav-logo" id="navLogo" aria-label="Kalarium Home">
+                <div class="nav-logo-glow"></div>
+                <img src="kalarium-logo.png" alt="Kalarium" class="nav-logo-img" id="scrollLogo">
+            </a>
+
+            <!-- Right links -->
+            <div class="nav-group nav-right">
+                <a href="#mentors" class="nav-link">Mentors</a>
+                <a href="#contact" class="nav-cta magnetic" id="navCta">
+                    <span>Join Now</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+
+        <!-- Hero background compass -->
+        <div class="hero-compass-bg" id="heroCompassBg">
+            <img src="kalarium-logo.png" alt="" class="hero-compass-img" aria-hidden="true">
+        </div>
+
+        <div class="hero-content">
+
+            <!-- Pill badge -->
+            <div class="pill-badge reveal-up" id="heroBadge">
+                <span class="pill-dot"></span>
+                <span>Kalarium Community</span>
+                <span class="pill-sep">·</span>
+                <span>Now Enrolling</span>
+            </div>
+
+            <!-- Main headline -->
+            <h1 class="hero-headline reveal-up" id="heroHeadline">
+                <span class="line line-1">Learning</span>
+                <span class="line line-2 accent-gradient">shouldn't feel</span>
+                <span class="line line-3">like a chore.</span>
+            </h1>
+
+            <!-- Ticker / marquee line -->
+            <div class="ticker-wrap reveal-up">
+                <div class="ticker-track" id="tickerTrack">
+                    <span>Learn</span><span class="ticker-dot">·</span>
+                    <span>Explore</span><span class="ticker-dot">·</span>
+                    <span>Connect</span><span class="ticker-dot">·</span>
+                    <span>Thrive</span><span class="ticker-dot">·</span>
+                    <span>Grow</span><span class="ticker-dot">·</span>
+                    <span>Learn</span><span class="ticker-dot">·</span>
+                    <span>Explore</span><span class="ticker-dot">·</span>
+                    <span>Connect</span><span class="ticker-dot">·</span>
+                    <span>Thrive</span><span class="ticker-dot">·</span>
+                    <span>Grow</span><span class="ticker-dot">·</span>
+                </div>
+            </div>
+
+            <!-- Sub headline -->
+            <p class="hero-sub reveal-up">
+                A place to learn, explore, and grow — without the pressure.<br>
+                Relatable mentors. Guidance shaped around each student's interests and strengths.<br>
+                A friendly community where curiosity is encouraged, mistakes are welcomed, and well-being matters.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-ctas reveal-up">
+                <a href="#contact" class="cta-primary magnetic" id="ctaPrimary">
+                    <span class="cta-bg"></span>
+                    <span class="cta-label">Start Your Journey</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#why-us" class="cta-secondary magnetic" id="ctaSecondary">
+                    <span>Explore ↓</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="scroll-hint" id="scrollHint">
+            <div class="scroll-line"></div>
+            <span>SCROLL</span>
+        </div>
+    </section>
+
+    <!-- ===================== WHY KALARIUM ===================== -->
+    <section class="why-section" id="why-us">
+        <div class="section-container">
+
+            <div class="section-tag reveal-up">Why Choose Kalarium</div>
+            <h2 class="section-headline reveal-up">We learn <span class="accent-gradient">differently</span><br>here.</h2>
+
+            <!-- Bento grid -->
+            <div class="bento-grid">
+
+                <!-- Large card -->
+                <div class="bento-card bento-lg reveal-up cursor-glow" id="bentoCard1">
+                    <div class="bento-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Interest-Driven Learning</h3>
+                    <p>Forget memorising things you hate. We align learning with what actually sparks you — so you go deeper, not just wider.</p>
+                    <div class="bento-card-glow"></div>
+                </div>
+
+                <!-- Medium card -->
+                <div class="bento-card bento-md reveal-up cursor-glow" id="bentoCard2">
+                    <div class="bento-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Relatable Mentors</h3>
+                    <p>Your mentor isn't a stranger in a suit. They're someone who's been exactly where you are.</p>
+                    <div class="bento-card-glow"></div>
+                </div>
+
+                <!-- Small card -->
+                <div class="bento-card bento-sm reveal-up cursor-glow" id="bentoCard3">
+                    <div class="bento-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <h3>Mistakes Welcome</h3>
+                    <p>Mess up. Ask dumb questions. That's the whole point — we grow from it.</p>
+                    <div class="bento-card-glow"></div>
+                </div>
+
+                <!-- Small card 2 -->
+                <div class="bento-card bento-sm reveal-up cursor-glow" id="bentoCard4">
+                    <div class="bento-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Well-being Matters</h3>
+                    <p>Burnout isn't a badge of honour. We keep the pressure human.</p>
+                    <div class="bento-card-glow"></div>
+                </div>
+
+                <!-- Wide card -->
+                <div class="bento-card bento-wide reveal-up cursor-glow" id="bentoCard5">
+                    <div class="bento-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.8 5.41a2 2 0 0 1-1.26 1.27l-5.41 1.8 1.8-5.41a2 2 0 0 1 1.26-1.27z"/></svg>
+                    </div>
+                    <h3>A Community, Not Just a Platform</h3>
+                    <p>Connect with peers who are figuring it out too. Because growing together > growing alone. Every step, every breakthrough, every aha-moment — you're not doing it solo.</p>
+                    <div class="bento-card-glow"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== MENTORS ===================== -->
+    <section class="mentors-section" id="mentors">
+        <div class="section-container">
+
+            <div class="section-tag reveal-up">The Team</div>
+            <h2 class="section-headline reveal-up">Meet your <span class="accent-gradient">guides.</span></h2>
+            <p class="section-sub reveal-up">Not professors. Not strangers. Real people who get it.</p>
+
+            <div class="mentors-grid">
+                <div class="mentor-card reveal-scale" id="mentor1">
+                    <div class="mentor-img-wrap">
+                        <img src="Anirudh 1.jpeg" alt="Anirudh" loading="lazy" onerror="this.parentNode.innerHTML='<div class=mentor-placeholder>A</div>'">
+                        <div class="mentor-img-overlay"></div>
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Anirudh</h3>
+                        <span class="mentor-tag">Founder · Physics & Math</span>
+                    </div>
+                </div>
+
+                <div class="mentor-card reveal-scale" id="mentor2" style="transition-delay: 0.1s;">
+                    <div class="mentor-img-wrap">
+                        <img src="Alen 1.jpeg" alt="Alen" loading="lazy" onerror="this.parentNode.innerHTML='<div class=mentor-placeholder>A</div>'">
+                        <div class="mentor-img-overlay"></div>
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Alen</h3>
+                        <span class="mentor-tag">Geophysics & Tech</span>
+                    </div>
+                </div>
+
+                <div class="mentor-card reveal-scale" id="mentor3" style="transition-delay: 0.2s;">
+                    <div class="mentor-img-wrap">
+                        <img src="Rithik 1.jpeg" alt="Rithik" loading="lazy" onerror="this.parentNode.innerHTML='<div class=mentor-placeholder>R</div>'">
+                        <div class="mentor-img-overlay"></div>
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Rithik</h3>
+                        <span class="mentor-tag">Pure Mathematics</span>
+                    </div>
+                </div>
+
+                <div class="mentor-card reveal-scale" id="mentor4" style="transition-delay: 0.3s;">
+                    <div class="mentor-img-wrap">
+                        <img src="akshath.jpeg" alt="Akshath" loading="lazy" onerror="this.parentNode.innerHTML='<div class=mentor-placeholder>A</div>'">
+                        <div class="mentor-img-overlay"></div>
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Akshath</h3>
+                        <span class="mentor-tag">Strategy & Creative</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mentors-footnote reveal-up">More mentors joining soon. Photos and profiles dropping as they come.</p>
+        </div>
+    </section>
+
+    <!-- ===================== BLOGS / VLOGS ===================== -->
+    <section class="blogs-section" id="blogs">
+        <div class="section-container">
+
+            <div class="section-tag reveal-up">Content</div>
+            <h2 class="section-headline reveal-up">Insights &amp; <span class="accent-gradient">stories.</span></h2>
+
+            <div class="blogs-row">
+                <div class="blog-card reveal-up" id="blog1">
+                    <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80')">
+                        <span class="blog-type">Article</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date">Sep 20, 2026</span>
+                        <h3>Why Curiosity Beats Curriculum</h3>
+                        <p>Self-directed learning vs rigid structures — and why one wins every time.</p>
+                        <a href="#" class="blog-link">Read →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal-up" id="blog2" style="transition-delay: 0.1s;">
+                    <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80')">
+                        <span class="blog-type vlog">Vlog</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date">Sep 15, 2026</span>
+                        <h3>A Day in the Life at Kalarium</h3>
+                        <p>Behind-the-scenes: how we build, learn, and stay curious together.</p>
+                        <a href="#" class="blog-link">Watch →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal-up" id="blog3" style="transition-delay: 0.2s;">
+                    <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b6a97?auto=format&fit=crop&w=800&q=80')">
+                        <span class="blog-type">Article</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date">Sep 10, 2026</span>
+                        <h3>The Problem With "Working Harder"</h3>
+                        <p>Burnout is a system failure, not a personal one. Let's talk about it.</p>
+                        <a href="#" class="blog-link">Read →</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+
+            <div class="contact-wrap reveal-up">
+                <div class="contact-left">
+                    <div class="section-tag">Let's talk</div>
+                    <h2 class="section-headline">Ready to<br><span class="accent-gradient">thrive?</span></h2>
+                    <p>Drop us a message. No pressure. No formality. Just tell us who you are and what you're looking for.</p>
+                    <div class="contact-email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>hello@kalarium.in</span>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="c-name">Name</label>
+                            <input type="text" id="c-name" name="name" placeholder="Your name" autocomplete="off" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="c-email">Email</label>
+                            <input type="email" id="c-email" name="email" placeholder="you@example.com" autocomplete="off" required>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="c-msg">Message</label>
+                        <textarea id="c-msg" name="message" rows="4" placeholder="What are you looking for?" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-primary form-btn magnetic" id="formSubmit">
+                        <span class="cta-bg"></span>
+                        <span class="cta-label">Send Message</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4z"/></svg>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo-wrap">
+                <img src="kalarium-logo.svg" alt="Kalarium" class="footer-logo-img">
+                <span class="footer-brand">KALARIUM</span>
+            </div>
+            <p class="footer-copy">&copy; 2026 Kalarium. All rights reserved.</p>
+            <p class="footer-tagline">Learn. Explore. Thrive.</p>
+        </div>
+    </footer>
+
+    <script src="kalarium-scripts.js"></script>
+</body>
+</html>

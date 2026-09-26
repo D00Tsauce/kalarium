@@ -2,41 +2,41 @@
   {
     "id": "1",
     "name": "Anirudh",
-    "role": "Founder, Physics Major",
+    "role": "Founder · Physics & Math",
     "institute": "IISER Tirupati - 3rd Year",
     "bio": "Believes in teaching through first-principles and real-world applications. Expert in Mathematics and Physics.",
     "tag": "Physics & Math"
   },
   {
     "id": "2",
-    "name": "Rihaan Harris",
-    "role": "3rd Year MBBS Student",
-    "institute": "Government Medical College Thrissur",
-    "bio": "Biology and Chemistry are my strengths. I believe in freedom of choice and not being forced to do something.",
-    "tag": "Biology & Chemistry"
-  },
-  {
-    "id": "3",
-    "name": "Akshath",
-    "role": "3rd Year BBA Student",
-    "institute": "SVYSTM",
-    "bio": "Focused on business administration and learning new things. Passionate about discovering hidden student talents.",
-    "tag": "Strategy & Mentorship"
-  },
-  {
-    "id": "4",
     "name": "Alen",
-    "role": "BTech Geophysics Student",
+    "role": "Geophysics & Tech",
     "institute": "IIT Roorkee - 2nd Year",
     "bio": "Passionate about exploring the earth and space. Driven by continuous curiosity to learn new things.",
     "tag": "Geophysics & Tech"
   },
   {
-    "id": "5",
+    "id": "3",
     "name": "Rithik",
-    "role": "3rd Year Math Major",
-    "institute": "IISER TVM",
+    "role": "Pure Mathematics",
+    "institute": "IISER TVM - 3rd Year",
     "bio": "Strong interest in pure mathematics, abstract algebra, and complex analysis. Passionate about revealing structural beauty in math.",
     "tag": "Pure Mathematics"
+  },
+  {
+    "id": "4",
+    "name": "Akshath",
+    "role": "Strategy & Creative",
+    "institute": "SVYSTM - 3rd Year",
+    "bio": "Focused on strategy, business administration, and creative problem solving. Passionate about discovering hidden student talents.",
+    "tag": "Strategy & Creative"
+  },
+  {
+    "id": "5",
+    "name": "Rihaan Harris",
+    "role": "Medical Sciences & Biology",
+    "institute": "Govt Medical College Thrissur - 3rd Year",
+    "bio": "Biology and Chemistry are my strengths. I believe in freedom of choice and not being forced into rigid rote memorization.",
+    "tag": "Biology & Chemistry"
   }
 ]
