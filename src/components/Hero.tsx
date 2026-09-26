@@ -1,215 +1,194 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import KalariumAnimatedLogo from "@/components/KalariumAnimatedLogo";
-import { ArrowRight, Compass, ShieldCheck, Zap, ChevronDown, Sparkles } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, Compass, ShieldCheck, Zap, Sparkles, CheckCircle2, LayoutDashboard, BookOpen } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const x = (clientX / window.innerWidth - 0.5) * 20;
-      const y = (clientY / window.innerHeight - 0.5) * 20;
-      setMousePos({ x, y });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  const marqueeValues = [
-    "Ignite Pure Curiosity",
-    "Eradicate Unnecessary Pressure",
-    "Paired First-Principles Problem Solving",
-    "Protect Mental Well-Being",
-    "Uncompromising Scientific Depth",
-    "Axiomatic Mathematics",
-    "Self-Directed Autonomy",
-    "Ignite Pure Curiosity",
-    "Eradicate Unnecessary Pressure",
-    "Paired First-Principles Problem Solving",
-    "Protect Mental Well-Being",
-    "Uncompromising Scientific Depth",
-  ];
-
   return (
-    <section id="home" className="relative min-h-[96vh] flex items-center justify-center pt-28 pb-20 overflow-hidden">
-      {/* Dynamic Cosmic Background with Aurora & Reticle Grid */}
+    <section id="home" className="relative min-h-[92vh] flex items-center justify-center pt-32 pb-20 overflow-hidden">
+      {/* Flashy Cosmic Aurora & Reticle Background */}
       <div className="absolute inset-0 pointer-events-none radial-glow-hero z-0" />
 
-      {/* Coordinate grid overlay */}
+      {/* Grid Pattern */}
       <div
-        className="absolute inset-0 opacity-[0.045] pointer-events-none z-0 bg-[linear-gradient(to_right,#a855f7_1px,transparent_1px),linear-gradient(to_bottom,#a855f7_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_45%,#000_70%,transparent_100%)]"
+        className="absolute inset-0 opacity-[0.05] pointer-events-none z-0 bg-[linear-gradient(to_right,#a855f7_1px,transparent_1px),linear-gradient(to_bottom,#a855f7_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_45%,#000_70%,transparent_100%)]"
       />
 
-      {/* Interactive mouse-following ambient neon orb */}
-      <motion.div
-        animate={{
-          x: mousePos.x * 2.5,
-          y: mousePos.y * 2.5,
-        }}
-        transition={{ type: "spring", damping: 30, stiffness: 200 }}
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-gradient-to-tr from-[#7c3aed]/25 via-[#8b5cf6]/30 to-[#c084fc]/15 rounded-full blur-[110px] pointer-events-none z-0"
-      />
+      {/* Flashy glowing nebula orbs in the background */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-[#7c3aed]/30 via-[#8b5cf6]/35 to-[#c084fc]/20 rounded-full blur-[120px] pointer-events-none z-0" />
+      <div className="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-[#6366f1]/15 rounded-full blur-[100px] pointer-events-none z-0" />
+      <div className="absolute top-1/3 right-1/4 w-[350px] h-[350px] bg-[#ec4899]/15 rounded-full blur-[100px] pointer-events-none z-0" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        
-        {/* Animated Centerpiece: The New Kalarium Compass-K Logo with Pulse Aura */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -45 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mb-6 group"
-        >
-          {/* Radiant back-glow rings */}
-          <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-[#8b5cf6]/30 via-[#c084fc]/20 to-[#a855f7]/30 blur-2xl group-hover:scale-125 transition-transform duration-700 pointer-events-none" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          <KalariumAnimatedLogo
-            size="hero"
-            animateOnScroll={true}
-            interactive={true}
-            className="transform group-hover:scale-105 transition-all duration-500"
-          />
-        </motion.div>
-
-        {/* Purpose-Driven Welcome Pill Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8b5cf6]/35 bg-[#0d0d14]/85 backdrop-blur-md text-xs sm:text-sm font-medium text-[#c084fc] shadow-lg shadow-[#8b5cf6]/10 mb-6 hover:border-[#a855f7]/60 transition-colors"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a855f7] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#8b5cf6]"></span>
-          </span>
-          <span className="tracking-wide">A Sanctuary for Self-Directed Minds</span>
-          <span className="text-[#64748b]">·</span>
-          <span className="text-[#f8fafc] font-semibold flex items-center gap-1">
-            Now Enrolling Cohorts
-          </span>
-        </motion.div>
-
-        {/* High-Impact Core Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-[#f8fafc] max-w-4xl leading-[1.06] font-display"
-        >
-          <span className="block">Learning</span>
-          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[#c084fc] via-[#a855f7] to-[#818cf8] drop-shadow-[0_12px_30px_rgba(139,92,246,0.45)] my-1">
-            shouldn&apos;t feel
-          </span>
-          <span className="block text-[#f8fafc]">like a chore.</span>
-        </motion.h1>
-
-        {/* Dynamic Purpose Values Ticker */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-6 w-full max-w-2xl overflow-hidden py-2.5 px-4 rounded-full border border-[#1e1e2d] bg-[#0d0d14]/75 backdrop-blur-sm shadow-inner"
-        >
-          <div className="animate-marquee whitespace-nowrap flex items-center gap-4 text-xs font-semibold uppercase tracking-widest text-[#a855f7]">
-            {marqueeValues.map((value, index) => (
-              <span key={index} className="inline-flex items-center gap-4">
-                <span className="text-[#e2e8f0] hover:text-[#c084fc] transition-colors">{value}</span>
-                <span className="text-[#8b5cf6]/60">✦</span>
+          {/* Left Column: Headline, Description & CTAs */}
+          <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
+            
+            {/* Top Pill: Free Trial & Enrolling */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#8b5cf6]/40 bg-[#0d0d14]/90 backdrop-blur-md text-xs sm:text-sm font-medium text-[#c084fc] shadow-lg shadow-[#8b5cf6]/10 mb-6"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a855f7] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#8b5cf6]" />
               </span>
-            ))}
+              <span className="text-[#f8fafc] font-semibold">Kalarium Learning</span>
+              <span className="text-[#64748b]">·</span>
+              <span>2-Week Free Trial Available</span>
+            </motion.div>
+
+            {/* Core Headline from user spec */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#f8fafc] leading-[1.08] font-display"
+            >
+              Personalise Your Learning.{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c084fc] via-[#a855f7] to-[#818cf8] drop-shadow-[0_8px_25px_rgba(139,92,246,0.35)]">
+                Excel in Every Exam.
+              </span>
+            </motion.h1>
+
+            {/* Subheadline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-4 text-lg sm:text-xl font-medium text-[#c084fc]/90"
+            >
+              Your goals. Your learning pace. Your path to success.
+            </motion.p>
+
+            {/* Concise, impactful overview */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="mt-3 text-sm sm:text-base text-[#94a3b8] leading-relaxed max-w-2xl"
+            >
+              Get personalised learning plans, structured study schedules, individual attention, and expert guidance tailored to your needs. From CBSE and Kerala State Board examinations to competitive exams like KEAM and NEET, we help you strengthen concepts, master exam patterns, and prepare with confidence.
+            </motion.p>
+
+            {/* Visual Pills for Target Audience (as in reference image) */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-6 flex flex-wrap gap-2.5 justify-center lg:justify-start"
+            >
+              <span className="px-3.5 py-1.5 rounded-lg bg-[#141424] border border-[#2e2e44] text-xs font-semibold text-[#c084fc] flex items-center gap-1.5 shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#a855f7]" />
+                Classes 8–12
+              </span>
+              <span className="px-3.5 py-1.5 rounded-lg bg-[#141424] border border-[#2e2e44] text-xs font-semibold text-[#c084fc] flex items-center gap-1.5 shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#a855f7]" />
+                CBSE &amp; Kerala State Boards
+              </span>
+              <span className="px-3.5 py-1.5 rounded-lg bg-[#141424] border border-[#2e2e44] text-xs font-semibold text-[#c084fc] flex items-center gap-1.5 shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#a855f7]" />
+                KEAM &amp; NEET
+              </span>
+              <span className="px-3.5 py-1.5 rounded-lg bg-[#8b5cf6]/20 border border-[#8b5cf6]/40 text-xs font-semibold text-white flex items-center gap-1.5 shadow-sm">
+                <Sparkles className="w-3.5 h-3.5 text-[#c084fc]" />
+                1-on-1 Researcher Mentors
+              </span>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+            >
+              <Link
+                id="hero-primary-cta"
+                href="#courses"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#8b5cf6] via-[#7c3aed] to-[#6d28d9] hover:from-[#a855f7] hover:to-[#7c3aed] text-[#f8fafc] font-semibold text-base shadow-xl shadow-[#7c3aed]/40 hover:shadow-[#8b5cf6]/60 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 group"
+              >
+                <span>Explore Our Programmes</span>
+                <ArrowRight className="w-5 h-5 text-[#f8fafc] group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <Link
+                id="hero-dashboard-cta"
+                href="/dashboard"
+                className="w-full sm:w-auto px-6 py-4 rounded-xl bg-[#0d0d14]/90 hover:bg-[#161622] text-[#f8fafc] border border-[#1e1e2d] hover:border-[#8b5cf6]/50 font-medium text-base transition-all duration-300 flex items-center justify-center gap-2 group"
+              >
+                <LayoutDashboard className="w-4 h-4 text-[#a855f7]" />
+                <span>Student Dashboard</span>
+              </Link>
+            </motion.div>
+
+            {/* High-Impact Stat / Trust Bar */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.45 }}
+              className="mt-10 pt-6 border-t border-[#1e1e2d] grid grid-cols-3 gap-4 w-full max-w-lg text-left"
+            >
+              <div>
+                <p className="text-xl sm:text-2xl font-black text-[#f8fafc] font-display">1-on-1</p>
+                <p className="text-xs text-[#94a3b8]">Personal Attention</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-black text-[#c084fc] font-display">100%</p>
+                <p className="text-xs text-[#94a3b8]">Tailored Pace</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-black text-[#f8fafc] font-display">0 Rote</p>
+                <p className="text-xs text-[#94a3b8]">First-Principles</p>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
 
-        {/* Subtitle Describing Transformative Purpose */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-6 text-base sm:text-xl text-[#94a3b8] max-w-2xl leading-relaxed"
-        >
-          Break free from rote memorization. We pair you 1-on-1 with scholars and researchers from premier science institutes to explore <span className="text-[#f8fafc] font-semibold">physics</span>, <span className="text-[#f8fafc] font-semibold">pure mathematics</span>, and <span className="text-[#f8fafc] font-semibold">medicine</span> on your own terms — with zero pressure and complete psychological safety.
-        </motion.p>
+          {/* Right Column: Flashy Official Logo Showcase with Cosmic Backdrop Effects */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative p-6 sm:p-8 flex flex-col items-center justify-center"
+            >
+              {/* Flashy Logo Container with background orbit and nebula effects */}
+              <KalariumAnimatedLogo
+                size="hero"
+                withFlashyEffects={true}
+                withGlow={true}
+                className="transform hover:scale-105 transition-transform duration-500 cursor-pointer"
+              />
 
-        {/* Action CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full max-w-md"
-        >
-          <Link
-            id="hero-primary-cta"
-            href="#start"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#8b5cf6] via-[#7c3aed] to-[#6d28d9] hover:from-[#a855f7] hover:to-[#7c3aed] text-[#f8fafc] font-semibold text-base shadow-xl shadow-[#7c3aed]/40 hover:shadow-[#8b5cf6]/60 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 group"
-          >
-            <span>Begin Your Exploration</span>
-            <ArrowRight className="w-5 h-5 text-[#f8fafc] group-hover:translate-x-1 transition-transform" />
-          </Link>
+              {/* Floating Badges around the logo for edtech visual energy */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-2 right-0 sm:right-4 px-3.5 py-2 rounded-xl bg-[#0d0d14]/95 border border-[#8b5cf6]/50 shadow-xl shadow-[#8b5cf6]/20 backdrop-blur-md flex items-center gap-2"
+              >
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs font-semibold text-[#f8fafc]">Active Doubt Clearing</span>
+              </motion.div>
 
-          <Link
-            id="hero-secondary-cta"
-            href="#philosophy"
-            className="w-full sm:w-auto px-7 py-4 rounded-xl bg-[#0d0d14]/90 hover:bg-[#161622] text-[#f8fafc] border border-[#1e1e2d] hover:border-[#8b5cf6]/50 font-medium text-base transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
-          >
-            <span>Discover Our Ethos ↓</span>
-          </Link>
-        </motion.div>
-
-        {/* Feature / Trust Pillars Described by Purpose */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 pt-10 border-t border-[#1e1e2d]/80 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 w-full max-w-3xl text-left"
-        >
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left p-4 rounded-xl bg-[#0d0d14]/50 border border-[#1e1e2d]/50 hover:border-[#8b5cf6]/30 transition-colors">
-            <div className="flex items-center gap-2 text-[#c084fc] font-semibold text-sm mb-1">
-              <Zap className="w-4 h-4 text-[#a855f7]" />
-              <span>Interest-Driven Depth</span>
-            </div>
-            <p className="text-xs text-[#94a3b8] leading-relaxed">
-              We align with what actually sparks you, allowing you to go deep into first principles rather than memorizing exams.
-            </p>
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-4 left-0 sm:left-4 px-3.5 py-2 rounded-xl bg-[#0d0d14]/95 border border-[#8b5cf6]/50 shadow-xl shadow-[#8b5cf6]/20 backdrop-blur-md flex items-center gap-2"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-[#c084fc]" />
+                <span className="text-xs font-semibold text-[#c084fc]">50% Off Early Bird</span>
+              </motion.div>
+            </motion.div>
           </div>
 
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left p-4 rounded-xl bg-[#0d0d14]/50 border border-[#1e1e2d]/50 hover:border-[#8b5cf6]/30 transition-colors">
-            <div className="flex items-center gap-2 text-[#c084fc] font-semibold text-sm mb-1">
-              <ShieldCheck className="w-4 h-4 text-[#a855f7]" />
-              <span>Active Researchers</span>
-            </div>
-            <p className="text-xs text-[#94a3b8] leading-relaxed">
-              1-on-1 access to peers and scholars actively pursuing cutting-edge science at IISER, IIT, and top medical colleges.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left p-4 rounded-xl bg-[#0d0d14]/50 border border-[#1e1e2d]/50 hover:border-[#8b5cf6]/30 transition-colors">
-            <div className="flex items-center gap-2 text-[#c084fc] font-semibold text-sm mb-1">
-              <Compass className="w-4 h-4 text-[#a855f7]" />
-              <span>Zero-Risk Trial</span>
-            </div>
-            <p className="text-xs text-[#94a3b8] leading-relaxed">
-              Experience genuine 1-on-1 intellectual mentorship, custom diagnostics, and community with no strings attached.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Navigational Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-14 text-[#64748b] hover:text-[#c084fc] transition-colors"
-        >
-          <Link href="#philosophy" className="flex flex-col items-center gap-1.5 text-xs uppercase tracking-widest group">
-            <span className="text-[11px] font-semibold tracking-[0.2em]">EXPLORE ETHOS</span>
-            <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform animate-bounce" />
-          </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

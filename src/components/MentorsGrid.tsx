@@ -50,7 +50,7 @@ export default function MentorsGrid() {
     : mentors.filter((m) => m.tag.toLowerCase().includes(activeFilter.toLowerCase()));
 
   return (
-    <section id="guides" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-[#1e1e2d]">
+    <section id="mentors" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-[#1e1e2d]">
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-b from-[#8b5cf6]/10 to-transparent blur-3xl pointer-events-none -z-10" />
 
